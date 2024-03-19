@@ -1,0 +1,96 @@
+body {
+    background: url(https://i.pinimg.com/originals/fd/40/a4/fd40a4b8b151c4e432106576187d03c9.gif) top / cover;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: $borderPink;
+}
+h1, h2{
+    text-align: end;
+    text-transform: uppercase;
+}
+h1{
+   margin-right: 50px;
+}
+span, .white{
+    color: #FFCC99;
+}
+::selection{
+    background: $borderPink;
+    color: white;
+}
+.wrapper{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    .box{
+        background-color: rgba(0, 0, 0, 0.151);
+        border-radius: 15px;
+        padding: 15px;
+        @include transition;
+        &:hover{
+            @include transition;
+            background-color: rgba(0, 0, 0, 0.24);
+        }
+        .date{
+            color: white;
+        }
+    }
+    .list-box{
+        padding: 15px;
+        color: white;
+        .tube-list, .done-list{
+            color: white;
+            margin-top: 15px;
+            summary {
+                list-style: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .check{
+                    display: flex;
+                }
+              }
+        }
+    }
+    input, button, textarea{
+        width: 100%;
+        border-radius: 5px;
+        border: 2px solid $pink;
+        background-color: transparent;
+        padding: 5px;
+        outline: none;
+        color: white;
+        @include transition;
+        &:hover{
+            @include transition;
+            border-color: $borderPink;
+        }
+    }
+    button{
+        cursor: pointer;
+        color: $borderPink;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 5px;
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.295);
+            color: white;
+        }
+    }
+}
+/* Cibler l'icône du calendrier dans Chrome et Edge */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Inverser les couleurs pour changer la couleur de l'icône */
+}
+
+/* Cibler l'icône du calendrier dans Firefox */
+input[type="date"]::-moz-calendar-picker-indicator {
+    filter: invert(1); /* Inverser les couleurs pour changer la couleur de l'icône */
+}
+
+/* Cibler l'icône du calendrier dans Safari */
+input[type="date"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Masquer le bouton de rotation */
+}
